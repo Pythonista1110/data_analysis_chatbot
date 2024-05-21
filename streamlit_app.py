@@ -1,4 +1,5 @@
 import pandas as pd
+import langchain
 
 from langchain.chat_models import ChatOpenAI
 from langchain.agents import create_pandas_dataframe_agent
