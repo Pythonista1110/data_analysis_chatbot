@@ -1,1 +1,19 @@
-test
+import openai
+
+# Replace with your actual API key
+openai.api_key = "sk-...XrSz"
+
+try:
+    # Test the API key with a simple request
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt="Hello, world!",
+        max_tokens=5
+    )
+    print("API key is valid.")
+    print(response.choices[0].text.strip())
+except openai.error.AuthenticationError:
+    print("Invalid API key.")
+except Exception as e:
+    print(f"An error occurred: {e}")
+
